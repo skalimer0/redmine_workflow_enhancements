@@ -56,7 +56,8 @@ module ActionView
       end
     end
 
-    alias_method :render, :workflow_enhancements
+    alias_method :render, :render_with_workflow_enhancements
+    alias_method :render_without_workflow_enhancements, :render
 
     def view_stack
       @_view_stack ||= []
