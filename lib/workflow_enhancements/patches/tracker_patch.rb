@@ -24,6 +24,7 @@ class Tracker
     @issue_statuses = IssueStatus.where(:id => ids).all.sort
   end
 
-  alias_method_chain :issue_statuses, :workflow_enhancements
+  alias_method :issue_statuses, :issue_statuses_with_workflow_enhancements
+  alias_method :issue_statuses_without_workflow_enhancements, :issue_statuses
 end
 
